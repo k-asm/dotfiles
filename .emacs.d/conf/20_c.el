@@ -1,0 +1,21 @@
+;; c-mode-hook
+(defun my-c-mode-hook ()
+  (c-set-style "stroustrup")
+  (setq indent-tabs-mode nil)
+  (define-key c-mode-base-map "\C-m" 'newline-and-indent))
+(add-hook 'c-mode-hook 'my-c-mode-hook)
+(defun my-c-common-mode ()
+  (c-toggle-hungry-state 1)
+  (gtags-mode 1))
+(add-hook 'c-mode-common-hook 'my-c-common-mode)
+
+;; c++-mode-hook
+(defun my-c++-mode-hook ()
+  (c-set-style "k&r")
+  (setq indent-tabs-mode nil)
+  (define-key c-mode-base-map "\C-m" 'newline-and-indent))
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+(defun my-c++-common-mode ()
+  (c-toggle-hungry-state 1)
+  (gtags-mode 1))
+(add-hook 'c++-mode-common-hook 'my-c++-common-mode)

@@ -1,0 +1,53 @@
+escape ^Tt
+
+defutf8 on
+defkanji utf-8
+encoding utf-8 utf-8
+defencoding utf-8
+
+defbce on
+term xterm-256color
+
+defscrollback 10000
+
+bind -c REGION 3 split -v
+bind -c REGION 2 split
+bind -c REGION 1 only
+bind -c REGION 0 remove
+bind -c REGION o focus
+bind -c REGION ^ resize
+bind x command -c REGION
+bind w windowlist -b
+
+bindkey "^[[5;5~" prev
+bindkey "^[[6;5~" next
+
+# clipboard
+# bufferfile $HOME/.screen_xsel
+# bindkey -m ' ' eval 'msgwait 0' 'stuff \040' writebuf 'exec !!! xsel -bi > $HOME/.screen_xsel' 'msgwait 2'
+# bindkey -m Y eval 'msgwait 0' 'stuff Y' writebuf 'exec !!! xsel -bi > $HOME/.screen_xsel' 'msgwait 2'
+# bindkey -m y eval 'msgwait 0' 'stuff y' writebuf 'exec !!! xsel -bi > $HOME/.screen_xsel' 'msgwait 2'
+# bindkey -m W eval 'msgwait 0' 'stuff W' writebuf 'exec !!! xsel -bi > $HOME/.screen_xsel' 'msgwait 2'
+
+bufferfile ${HOME}/.screen_xclip
+bindkey -m ' ' eval 'msgwait 0' 'stuff \040' writebuf 'exec !!! xclip ${HOME}/.screen_xclip' 'msgwait 0'
+bindkey -m Y eval 'msgwait 0' 'stuff Y' writebuf 'exec !!! xclip ${HOME}/.screen_xclip' 'msgwait 0'
+bindkey -m y eval 'msgwait 0' 'stuff y' writebuf 'exec !!! xclip ${HOME}/.screen_xclip' 'msgwait 0'
+bindkey -m W eval 'msgwait 0' 'stuff W' writebuf 'exec !!! xclip ${HOME}/.screen_xclip' 'msgwait 0'
+
+vbell off
+shell -$SHELL
+shelltitle "$ |shell"
+
+startup_message off
+autodetach on
+
+hardstatus alwayslastline "%{= wk} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wb}%y/%m/%d %{=b wb}%c"
+
+screen 0
+
+altscreen on
+
+logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
+log on
+deflog on
