@@ -11,17 +11,6 @@ case ${UID} in
         ;;
 esac
 
-case "${OSTYPE}" in
-    freebsd*|darwin*)
-        export LESS="-R"
-        export LESSOPEN="|/usr/local/bin/src-hilite-lesspipe.sh %s | nkf -w"
-    ;;
-    linux*)
-        export LESS="-R"
-        export LESSOPEN="|/usr/share/source-highlight/src-hilite-lesspipe.sh %s | nkf -w"
-    ;;
-esac
-
 ## Default shell configuration
 #
 # set prompt
@@ -127,20 +116,11 @@ autoload zed
 #
 setopt complete_aliases     # aliased ls needs if file/dir completions work
 
+export LESS="-R"
+
 alias where="command -v"
 alias j="jobs -l"
 
-case "${OSTYPE}" in
-    freebsd*|darwin*)
-        alias ls="ls -G"
-        alias rm="rmtrash"
-        alias emacs="/usr/local/Cellar/emacs/24.2/bin/emacs"
-        ;;
-    linux*)
-        alias ls="ls --color=auto"
-        alias rm="trash"
-        ;;
-esac
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
@@ -154,6 +134,15 @@ alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
+# git
+alias glo="git log"
+alias gst="git st"
+alias gci="git ci"
+alias gco="git co"
+alias ggr="git gr"
+alias push="git push"
+alias pull="git pull"
+
 # for server
 alias scrr="screen -U -D -RR"
 
@@ -163,41 +152,41 @@ alias jnethack="cocot -t UTF-8 -p EUC-JP jnethack"
 #
 case "${TERM}" in
     screen)
-    TERM=xterm-256color
-    ;;
+        TERM=xterm-256color
+        ;;
 esac
 
 case "${TERM}" in
     xterm|xterm-color)
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-    ;;
+        export LSCOLORS=exfxcxdxbxegedabagacad
+        export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+        zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+        ;;
     kterm-color)
-    stty erase '^H'
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-    ;;
+        stty erase '^H'
+        export LSCOLORS=exfxcxdxbxegedabagacad
+        export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+        zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+        ;;
     kterm)
-    stty erase '^H'
-    ;;
+        stty erase '^H'
+        ;;
     cons25)
-    unset LANG
-    export LSCOLORS=ExFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
+        unset LANG
+        export LSCOLORS=ExFxCxdxBxegedabagacad
+        export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+        zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+        ;;
     jfbterm-color)
-    export LSCOLORS=gxFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
+        export LSCOLORS=gxFxCxdxBxegedabagacad
+        export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+        zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+        ;;
     xterm-256color)
-    export LSCOLORS=ExFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
+        export LSCOLORS=dxfxxxxxbxegedbxbxdxdx
+        export LS_COLORS='di=33;40:ln=35;40:so=0;40:pi=0;40:ex=31;40:bd=34;46:cd=34;43:su=31;40:sg=31;40:tw=33;40:ow=33;40:'
+        zstyle ':completion:*' list-colors 'di=;40;33' 'ln=;40;35' 'so=;40;0' 'ex=40;31' 'bd=46;34' 'cd=43;34'
+        ;;
 esac
 
 # [ ${STY} ] || screen -rx || screen -D -RR
@@ -210,13 +199,36 @@ preexec() {
 #
 case "${TERM}" in
     xterm|xterm-color|kterm|kterm-color|xterm-256color)
-    precmd() {
+        precmd() {
             echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
         }
+        ;;
+esac
+
+## plenv
+if which plenv > /dev/null; then eval "$(plenv init -)"; fi
+
+## rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+case "${OSTYPE}" in
+    freebsd*)
+        source ${HOME}/.zshrc.bsd
+        ;;
+    darwin*)
+        source ${HOME}/.zshrc.mac
+        ;;
+    linux*)
+        source ${HOME}/.zshrc.linux
         ;;
 esac
 
 ## load user .zshrc configuration file
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
+
+## create emacs env file
+perl -wle \
+    'do { print qq/(setenv "$_" "$ENV{$_}")/ if exists $ENV{$_} } for @ARGV' \
+    PATH > ~/.emacs.d/shellenv.el
 
