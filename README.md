@@ -2,9 +2,10 @@
 
     cd ~/.emacs.d/elisp/
 
-    M-x auto-install-from-url http://coderepos.org/share/browser/lang/elisp/init-loader/init-loader.el
+    wget http://coderepos.org/share/browser/lang/elisp/init-loader/init-loader.el
+    wget http://www.emacswiki.org/emacs/download/auto-install.el
+    wget https://raw.github.com/karupanerura/plenv.el/master/plenv.el
 
-    M-x auto-install-from-emacswiki auto-install.el
     M-x auto-install-from-emacswiki perl-completion.el
 
 	M-x auto-install-batch anything-minimal
