@@ -1,0 +1,13 @@
+if [ -e ${HOME}/.source-highlight/src-hilite-lesspipe.sh ]; then
+   export LESSOPEN="|~/.source-highlight/src-hilite-lesspipe.sh %s | nkf -w"
+else
+   export LESSOPEN="|/usr/local/bin/src-hilite-lesspipe.sh %s | nkf -w"
+fi
+
+# alias pbcopy="nkf -w | __CF_USER_TEXT_ENCODING=0x$(printf %x $(id -u)):0x08000100:14 pbcopy"
+alias ls="ls -G"
+if which rmtrash > /dev/null; then
+    alias rm="rmtrash"
+fi
+alias emacs="/usr/local/Cellar/emacs/24.3/bin/emacs"
+

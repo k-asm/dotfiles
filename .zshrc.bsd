@@ -1,0 +1,6 @@
+export LESSOPEN="|/usr/local/bin/src-hilite-lesspipe.sh %s | nkf -w"
+alias ls="ls -G"
+if which rmtrash > /dev/null; then
+    alias rm="rmtrash"
+fi
+
