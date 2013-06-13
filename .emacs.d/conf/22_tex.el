@@ -5,5 +5,6 @@
 (setq YaTeX-kanji-code nil)
 (setq dvi2-command "xdvi-ja")
 (setq tex-command "latexmk -pvc")
+(setq YaTeX-use-LaTeX2e t)
 ;; (setq bibtex-command "pbibtex")
 ;; (setq tex-command "platex -interaction=nonstopmode -kanji=utf8")

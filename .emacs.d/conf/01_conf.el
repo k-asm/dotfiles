@@ -25,12 +25,19 @@
 ;; ビープ音必要なし
 (setq ring-bell-function '(lambda ()))
 
+;; シンボリックリンクを開く時の質問を省略する
+(setq vc-follow-symlinks t)
+
 ;; tab->space
 (setq-default indent-tabs-mode nil)
 
 ;; right-side > return
 (setq truncate-lines nil)
 (setq truncate-partial-width-windows nil)
+
+;; electric-pair-mode
+(when (>= emacs-major-version 24)
+  (electric-pair-mode t))
 
 ;; linum
 (when (> emacs-major-version 22)
@@ -68,6 +75,11 @@
 ;; (package-install 'auto-complete)
 (require 'auto-complete)
 (global-auto-complete-mode t)
+(require 'auto-complete-config)
+(ac-config-default)
+(define-key ac-complete-mode-map "\C-n" 'ac-next)
+(define-key ac-complete-mode-map "\C-p" 'ac-previous)
+(add-hook 'auto-complete-mode-hook 'ac-common-setup)
 
 ;; backup
 (setq make-backup-files t)

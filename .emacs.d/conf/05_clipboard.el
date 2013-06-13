@@ -4,6 +4,9 @@
 (defun paste-to-osx (text &optional push)
   (let ((process-connection-type nil))
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+    ;; (let ((proc (start-process "pbcopy" 
+    ;;                            "*Messages*" 
+    ;;                            "nkf" "-w" "|" "__CF_USER_TEXT_ENCODING=0x$(printf %x $(id -u)):0x08000100:14" "pbcopy")))
       (process-send-string proc text)
       (process-send-eof proc))))
 
@@ -22,3 +25,4 @@
 ;;                (proc (start-process "xsel" "*Messages*" "xsel" "-b" "-i")))
 ;;           (process-send-string proc text)
 ;;           (process-send-eof proc))))
+

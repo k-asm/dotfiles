@@ -1,0 +1,32 @@
+(require 'set-perl5lib)
+(defalias 'perl-mode 'cperl-mode)
+(add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
+
+(defun my-perl-common-mode ()
+  (set-perl5lib)
+;;  (setq cperl-auto-newline t)
+  (setq cperl-indent-parens-as-block t)
+  (setq cperl-close-paren-offset -4)
+  (setq cperl-indent-level 4)
+  (setq cperl-label-offset -4)
+  (setq cperl-continued-statement-offset 2)
+  (setq cperl-highlight-variables-indiscriminately t)
+  (setq cperl-indent-subs-specially nil))
+(add-hook 'cperl-mode-hook 'my-perl-common-mode)
+
+(defvar ac-source-my-perl-completion
+  '((candidates . plcmp-ac-make-cands)))
+
+(defun ac-perl-mode-setup ()
+  (require 'perl-completion)
+  (perl-completion-mode t)
+  (setq plcmp-use-keymap nil)
+  (let ((lib (concat (file-name-directory buffer-file-name) "local/lib/perl5/")))
+    (unless (member lib 'plcmp--PERL5LIB-directories)
+        (add-to-list 'plcmp--PERL5LIB-directories lib)))
+  (add-to-list 'ac-sources 'ac-source-my-perl-completion)
+  (local-set-key (kbd "C-c s") 'cperl-perldoc)
+  (local-set-key (kbd "M-RET") 'plcmp-cmd-smart-complete)
+  (local-set-key (kbd "C-c d") 'plcmp-cmd-show-doc-at-point))
+(add-hook 'cperl-mode-hook 'ac-perl-mode-setup)
+

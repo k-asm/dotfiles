@@ -1,8 +1,4 @@
-;; (auto-install-batch "anything-minimal")
-
 (require 'anything-config)
-;; anything-grep
-;; (auto-install-from-emacswiki "anything-grep.el")
 (require 'anything-grep)
 
 (setq anything-input-idle-delay 0.1)
@@ -25,4 +21,6 @@
      anything-c-source-recentf)
    "*anything my-anything*"))
 (define-key global-map (kbd "C-q") 'my-anything)
+
+(define-key anything-map "\C-z" 'anything-execute-persistent-action)
 

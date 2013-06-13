@@ -5,9 +5,13 @@
 (global-set-key "\M-g" 'goto-line)
 (global-set-key "\C-cr" 'replace-string)
 (global-set-key "\C-cl" 'load-file)
+(global-set-key "\C-cf" 'indent-region)
+(global-set-key "\C-h" 'delete-backward-char)
+(global-set-key "\C-ci" 'indent-region)
 
 ;; alt <-> meta
 (custom-set-variables
  '(ns-alternate-modifier 'alt)
  '(ns-command-modifier 'meta))
+
 

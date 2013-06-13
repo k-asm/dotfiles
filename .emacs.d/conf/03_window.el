@@ -15,8 +15,8 @@
 (if run-cocoa
     (progn
       (setq initial-frame-alist
-            (append (list '(width . 40)
-                          '(height . 30))
+            (append (list '(width . 100)
+                          '(height . 40))
                     initial-frame-alist))
       (set-default-font "ricty-16")))
 
@@ -26,7 +26,7 @@
                         'japanese-jisx0208
                         '("ricty" . "unicode-bmp"))
       (setq initial-frame-alist 
-            (append (list '(alpha . 85)) initial-frame-alist))))
+            (append (list '(alpha . 80)) initial-frame-alist))))
 
 (if (or run-x run-cocoa)
     (progn
