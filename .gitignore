@@ -1,4 +1,10 @@
 *~
 *.elc
-.emacs.d/auto-save-list
-.emacs.d/elpa
+ac-comphist.dat
+clang-complete
+.emacs.d/shellenv.el
+.emacs.d/auto-save-list/*
+.emacs.d/elpa/*
+.emacs.d/eshell/*
+.emacs.d/url/*
+.emacs.d/var/*
