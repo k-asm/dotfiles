@@ -17,6 +17,7 @@
      gist
      cperl-mode
      lua-mode
+     magit
     ))
 
 (let ((not-installed (loop for x in installing-package-list
