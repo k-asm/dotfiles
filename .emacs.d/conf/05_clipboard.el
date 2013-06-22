@@ -1,12 +1,15 @@
+(setq mouse-drag-copy-region nil)
+(setq x-select-enable-primary nil)
+(setq x-select-enable-clipboard t)
+(setq select-active-regions t)
+
 (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
 
 (defun paste-to-osx (text &optional push)
   (let ((process-connection-type nil))
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-    ;; (let ((proc (start-process "pbcopy" 
-    ;;                            "*Messages*" 
-    ;;                            "nkf" "-w" "|" "__CF_USER_TEXT_ENCODING=0x$(printf %x $(id -u)):0x08000100:14" "pbcopy")))
+      (setenv "__CF_USER_TEXT_ENCODING" "0x1F5:0x8000100:14")
       (process-send-string proc text)
       (process-send-eof proc))))
 
