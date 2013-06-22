@@ -1,7 +1,7 @@
 (require 'flymake)
 
-(global-set-key "\C-ce" 'flymake-goto-next-error)
-(global-set-key "\C-cE" 'flymake-goto-prev-error)
+(define-key global-map (kbd "C-c e") 'flymake-goto-next-error)
+(define-key global-map (kbd "C-c E") 'flymake-goto-prev-error)
 
 (set-face-background 'flymake-errline "red4")
 (set-face-background 'flymake-warnline "dark slate blue")

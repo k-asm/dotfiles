@@ -1,13 +1,13 @@
 (global-set-key [home] 'beginning-of-line)
 (global-set-key [select] 'end-of-line)
-(global-set-key "\C-a" 'beginning-of-line)
-(global-set-key "\C-e" 'end-of-line)
-(global-set-key "\M-g" 'goto-line)
-(global-set-key "\C-cr" 'replace-string)
-(global-set-key "\C-cl" 'load-file)
-(global-set-key "\C-cf" 'indent-region)
-(global-set-key "\C-h" 'delete-backward-char)
-(global-set-key "\C-ci" 'indent-region)
+(define-key global-map (kbd "C-a") 'beginning-of-line)
+(define-key global-map (kbd "C-e") 'end-of-line)
+(define-key global-map (kbd "M-g") 'goto-line)
+(define-key global-map (kbd "C-c r") 'replace-string)
+(define-key global-map (kbd "C-c l") 'load-file)
+(define-key global-map (kbd "C-c f") 'indent-region)
+(define-key global-map (kbd "C-h") 'delete-backward-char)
+(define-key global-map (kbd "C-c i") 'indent-region)
 
 ;; alt <-> meta
 (custom-set-variables

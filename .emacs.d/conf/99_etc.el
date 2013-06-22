@@ -12,7 +12,7 @@
     (cd dir)
     (eshell-interactive-print (concat "cd " dir "\n"))
     (eshell-emit-prompt)))
-(global-set-key "\C-cd" 'eshell-cd-default-directory)
+(define-key global-map (kbd "C-c d") 'eshell-cd-default-directory)
 
 (defun my-count-words-region (start end)
   (interactive "r")
