@@ -1,5 +1,10 @@
+;; emacs server
+(server-start)
+
 ;; 対応する括弧を光らせる
 (show-paren-mode t)
+;; ウィンドウ内に収まらないときだけ括弧内も光らせる
+(setq show-paren-style 'mixed)
 
 ;; 行数，列数をつける
 (line-number-mode t)
@@ -11,6 +16,11 @@
 
 ;; ctrl-k で行全体を削除
 (setq kill-whole-line t)
+;; 最終行に必ず一行挿入する
+(setq require-final-newline t)
+;; バッファの最後でnewlineで新規行を追加するのを禁止する
+(setq next-line-add-newlines nil)
+
 ;; 選択中に文字入れると削除
 (delete-selection-mode t)
 
@@ -25,8 +35,14 @@
 ;; ビープ音必要なし
 (setq ring-bell-function '(lambda ()))
 
+;; カーソルの点滅をやめる
+(blink-cursor-mode 0)
+
 ;; シンボリックリンクを開く時の質問を省略する
 (setq vc-follow-symlinks t)
+
+;; 関数名を表示する
+(which-function-mode 1)
 
 ;; tab->space
 (setq-default indent-tabs-mode nil)
@@ -71,6 +87,10 @@
 (setq hl-line-face 'hlline-face)
 (global-hl-line-mode)
 
+;; カーソルの場所を保存する
+(require 'saveplace)
+(setq-default save-place t)
+
 ;; auto-complete
 ;; (package-install 'auto-complete)
 (require 'auto-complete)
@@ -92,11 +112,70 @@
 (setq gtags-mode-hook
       '(lambda ()
          (local-set-key "\M-t" 'gtags-find-tag)
-         (local-set-key "\M-r" 'gtags-find-rtag)  
+         (local-set-key "\M-r" 'gtags-find-rtag)
          (local-set-key "\M-s" 'gtags-find-symbol)
          (local-set-key "\C-t" 'gtags-pop-stack)))
 
 ;; uniquify
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
+
+;; whitespace
+;;; 空白や長すぎる行を視覚化する。
+(require 'whitespace)
+;;; 1行が80桁を超えたら長すぎると判断する。
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face              ; faceを使って視覚化する。
+                         trailing          ; 行末の空白を対象とする。
+                         lines-tail        ; 長すぎる行のうち
+                                           ; whitespace-line-column以降のみを
+                                           ; 対象とする。
+                         space-before-tab  ; タブの前にあるスペースを対象とする。
+                         space-after-tab)) ; タブの後にあるスペースを対象とする。
+;;; デフォルトで視覚化を有効にする。
+(global-whitespace-mode 1)
+
+;; 補完
+;;; 補完時に大文字小文字を区別しない
+(setq completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+
+;;; 部分一致の補完機能を使う
+;;; p-bでprint-bufferとか
+(when (<= emacs-major-version 23)
+  (partial-completion-mode t))
+
+;;; 補完可能なものを随時表示
+;;; 少しうるさい
+(icomplete-mode 1)
+
+;; 履歴
+;;; 履歴数を大きくする
+(setq history-length 10000)
+
+;;; ミニバッファの履歴を保存する
+(savehist-mode 1)
+
+;;; 最近開いたファイルを保存する数を増やす
+(setq recentf-max-saved-items 10000)
+
+;; 圧縮
+;;; gzファイルも編集できるようにする
+(auto-compression-mode t)
+
+;; diff
+;;; ediffを1ウィンドウで実行
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;;; diffのオプション
+(setq diff-switches '("-u" "-p" "-N"))
+
+;; 実行権
+;;; ファイルの先頭に#!...があるファイルを保存すると実行権をつける
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
+;; スペルチェック
+(setq-default flyspell-mode t)
+(setq ispell-dictionary "american")
 

@@ -8,6 +8,7 @@
 (define-key global-map (kbd "C-c f") 'indent-region)
 (define-key global-map (kbd "C-h") 'delete-backward-char)
 (define-key global-map (kbd "C-c i") 'indent-region)
+(define-key global-map (kbd "M-C-g") 'grep)
 
 ;; alt <-> meta
 (custom-set-variables

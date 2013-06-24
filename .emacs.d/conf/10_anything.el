@@ -13,7 +13,6 @@
 (define-key anything-command-map (kbd "o") 'anything-occur)
 (define-key anything-command-map (kbd "g") 'anything-grep)
 
-;; my anything
 (defun my-anything ()
   (interactive)
   (anything-other-buffer
