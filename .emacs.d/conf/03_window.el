@@ -18,7 +18,7 @@
             (append (list '(width . 100)
                           '(height . 40))
                     initial-frame-alist))
-      (set-default-font "ricty-16")))
+      (set-default-font "ricty-14")))
 
 (if (>= emacs-major-version 23)
     (progn
