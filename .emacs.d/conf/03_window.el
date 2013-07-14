@@ -15,8 +15,8 @@
 (if run-cocoa
     (progn
       (setq initial-frame-alist
-            (append (list '(width . 100)
-                          '(height . 40))
+            (append (list '(width . 160)
+                          '(height . 45))
                     initial-frame-alist))
       (set-default-font "ricty-14")))
 
