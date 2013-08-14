@@ -19,6 +19,7 @@
      lua-mode
      magit
      color-theme-solarized
+     yaml-mode
     ))
 
 (let ((not-installed (loop for x in installing-package-list
