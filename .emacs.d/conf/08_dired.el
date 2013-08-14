@@ -10,6 +10,9 @@
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
+;;; 二画面ファイラっぽくする
+(setq dired-dwim-target t)
+
 ;; diredから適切なバージョン管理システムの*-statusを起動
 (defun dired-vc-status (&rest args)
   (interactive)
