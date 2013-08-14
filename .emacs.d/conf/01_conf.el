@@ -132,6 +132,9 @@
                                            ; 対象とする。
                          space-before-tab  ; タブの前にあるスペースを対象とする。
                          space-after-tab)) ; タブの後にあるスペースを対象とする。
+
+(set-face-background 'whitespace-trailing "red4")
+
 ;;; デフォルトで視覚化を有効にする。
 (global-whitespace-mode 1)
 

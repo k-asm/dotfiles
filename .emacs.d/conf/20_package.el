@@ -18,6 +18,7 @@
      cperl-mode
      lua-mode
      magit
+     color-theme-solarized
     ))
 
 (let ((not-installed (loop for x in installing-package-list
