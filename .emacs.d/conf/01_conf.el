@@ -42,7 +42,7 @@
 (setq vc-follow-symlinks t)
 
 ;; 関数名を表示する
-(which-function-mode 1)
+(which-function-mode 0)
 
 ;; tab->space
 (setq-default indent-tabs-mode nil)
