@@ -2,7 +2,6 @@
 
 (defvar installing-package-list
   '( auto-complete
-     gtags
      haml-mode
      sass-mode
      js2-mode
