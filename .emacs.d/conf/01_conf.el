@@ -68,6 +68,11 @@
 ;; wind-move
 (windmove-default-keybindings)
 (setq windmove-wrap-around t)
+;;; enable wind-move key in tmux
+(global-set-key "\M-[1;2A" 'windmove-up)
+(global-set-key "\M-[1;2B" 'windmove-down)
+(global-set-key "\M-[1;2C" 'windmove-right)
+(global-set-key "\M-[1;2D" 'windmove-left)
 
 ;; mouse-wheel ON
 (mouse-wheel-mode t)
