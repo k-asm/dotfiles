@@ -11,9 +11,5 @@
 (define-key global-map (kbd "C-c g") 'grep)
 (define-key global-map (kbd "M-h") 'backward-kill-word)
 
-;; alt <-> meta
-(custom-set-variables
- '(ns-alternate-modifier 'alt)
- '(ns-command-modifier 'meta))
-
-
+;; command -> meta
+(setq ns-command-modifier 'meta)
