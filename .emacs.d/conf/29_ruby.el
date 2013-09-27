@@ -15,6 +15,7 @@
   (local-set-key (kbd "C-c d") 'yari-anything))
 (add-hook 'ruby-mode-hook 'ruby-mode-setup)
 
+;; http://willnet.in/13
 (defadvice ruby-indent-line (after unindent-closing-paren activate)
   (let ((column (current-column))
         indent offset)
