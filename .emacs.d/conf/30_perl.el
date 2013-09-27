@@ -1,6 +1,7 @@
 (require 'set-perl5lib)
 (defalias 'perl-mode 'cperl-mode)
 (add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.psgi\\'" . cperl-mode))
 
 (defun my-perl-common-mode ()
   (set-perl5lib)
