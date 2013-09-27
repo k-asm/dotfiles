@@ -12,7 +12,7 @@
                     initial-frame-alist))
       (set-default-font "ricty-13.5")))
 
-(if run-cocoa
+(if (and run-cocoa (display-graphic-p))
     (progn
       (setq initial-frame-alist
             (append (list '(width . 160)
@@ -20,7 +20,7 @@
                     initial-frame-alist))
       (set-default-font "ricty-14")))
 
-(if (>= emacs-major-version 23)
+(if (and (>= emacs-major-version 23) (display-graphic-p))
     (progn
       (set-fontset-font (frame-parameter nil 'font)
                         'japanese-jisx0208
