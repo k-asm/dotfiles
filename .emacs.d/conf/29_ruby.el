@@ -30,29 +30,3 @@
     (when indent
       (indent-line-to indent)
       (when (> offset 0) (forward-char offset)))))
-
-;; (defun ac-ruby-mode-setup ()
-;;    (require 'rcodetools)
-;;    (require 'auto-complete-ruby)
-;;    (make-local-variable 'ac-omni-completion-sources)
-;;    (setq ac-omni-completion-sources '(("\\.\\=" . (ac-source-rcodetools)))))
-;; (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-
-;; (require 'anything-rcodetools)
-;; (setq rct-find-tag-if-available nil)
-;; (setq rct-get-all-methods-command "PAGER=cat fri -l")
-
-;; (defun ac-ruby-mode-setup ()
-;;   (local-set-key (kbd "M-RET") 'rct-complete-symbol)
-;;   (local-set-key (kbd "C-c d") 'rct-ri)
-;;   (local-set-key (kbd "C-c C-d") 'xmp))
-;; (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-
-;; ;; start fastri-server
-;; (defun start-fastri-server()
-;;   (let*
-;;       ((progname "fastri-server")
-;;        (buffname (format "*%S*" progname)))
-;;     (start-process progname buffname progname)))
-;; (start-fastri-server)
-

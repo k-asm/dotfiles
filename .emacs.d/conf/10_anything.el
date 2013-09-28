@@ -22,4 +22,3 @@
 (define-key global-map (kbd "C-q") 'my-anything)
 
 (define-key anything-map "\C-z" 'anything-execute-persistent-action)
-

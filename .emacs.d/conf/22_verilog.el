@@ -7,4 +7,3 @@
   (setq verilog-indent-tabs-mode nil)
   (setq verilog-tab-always-indent t))
 (add-hook 'verilog-mode-hook 'my-verilog-mode-hook)
-

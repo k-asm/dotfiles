@@ -52,8 +52,8 @@
 
 (eval-after-load "perl-completion"
   '(progn
-     (defadvice flymake-start-syntax-check-process 
-       (around flymake-start-syntax-check-lib-path activate) 
+     (defadvice flymake-start-syntax-check-process
+       (around flymake-start-syntax-check-lib-path activate)
        (plcmp-with-set-perl5-lib ad-do-it))))
 
 (defadvice flymake-post-syntax-check (before flymake-force-check-was-interrupted)

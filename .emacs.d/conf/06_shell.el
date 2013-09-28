@@ -1,5 +1,5 @@
 ;; use bash
-(setq explicit-shell-file-name "/bin/bash") 
+(setq explicit-shell-file-name "/bin/bash")
 (setq shell-file-name "/bin/bash")
 (setq shell-command-switch "-c")
 

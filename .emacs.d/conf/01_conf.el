@@ -173,4 +173,3 @@
 ;; スペルチェック
 (setq-default flyspell-mode t)
 (setq ispell-dictionary "american")
-
