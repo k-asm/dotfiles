@@ -1,6 +1,6 @@
 ;; ディレクトリ
 ;;; mac の場合、gls を使う
-(if (or (eq system-type 'darwin) (eq system-type 'mac))
+(if run-darwin
     (setq insert-directory-program "gls"))
 
 ;;; diredを便利にする

@@ -13,7 +13,7 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
-(if (or (eq system-type 'darwin) (eq system-type 'mac))
+(if run-darwin
     (progn
       (setq interprogram-cut-function 'paste-to-osx)
       (setq interprogram-paste-function 'copy-from-osx)))

@@ -1,4 +1,4 @@
-(if (eq system-type 'gnu/linux)
+(if run-linux
     (progn
       (require 'ibus)
       (ibus-define-common-key ?\C-\s nil)
