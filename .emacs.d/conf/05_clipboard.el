@@ -20,6 +20,7 @@
 
 ;; clipboard setting
 (if run-x
+    (progn
     (setq interprogram-paste-function
           (lambda ()
             (shell-command-to-string "xsel -b -o")))
@@ -28,5 +29,5 @@
           (let* ((process-connection-type nil)
                  (proc (start-process "xsel" "*Messages*" "xsel" "-b" "-i")))
             (process-send-string proc text)
-            (process-send-eof proc)))))
+            (process-send-eof proc))))))
 
