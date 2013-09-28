@@ -24,10 +24,3 @@
 
 (setq default-frame-alist initial-frame-alist)
 (setq frame-title-format (format "emacs@%s : %%f" (system-name)))
-
-(when (require 'color-theme)
-  (color-theme-initialize)
-  (when (require 'color-theme-solarized)
-    (color-theme-solarized-dark)))
-
-(set-face-background 'whitespace-trailing "red4")
