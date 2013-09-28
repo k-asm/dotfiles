@@ -1,7 +1,10 @@
 (require 'cl)
 
 (defvar installing-package-list
-  '( auto-complete
+  '( init-loader
+     auto-install
+     plenv
+     auto-complete
      haml-mode
      sass-mode
      js2-mode
