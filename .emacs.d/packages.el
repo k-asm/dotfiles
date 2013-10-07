@@ -25,6 +25,7 @@
      popwin
      ag
      wgrep-ag
+     rust-mode
     ))
 
 (let ((not-installed (loop for x in installing-package-list
