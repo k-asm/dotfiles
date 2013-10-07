@@ -23,6 +23,8 @@
      color-theme-solarized
      yaml-mode
      popwin
+     ag
+     wgrep-ag
     ))
 
 (let ((not-installed (loop for x in installing-package-list

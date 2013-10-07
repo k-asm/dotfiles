@@ -22,3 +22,11 @@
           (lambda ()
             (define-key grep-mode-map
               (kbd "C-c C-c") 'grep-edit-finish-edit)))
+
+(require 'ag)
+(require 'wgrep)
+
+(add-hook 'ag-mode-hook
+          (lambda ()
+            (setq ag-highlight-search t)
+            (setq ag-reuse-buffers t)))
