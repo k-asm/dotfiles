@@ -78,3 +78,10 @@
                (sit-for 1))
           (message "Found library file %s" found))
       (error "Library file \"%s\" not found." library))))
+
+(defun perl-reply ()
+  (interactive)
+  "Start or show an reply in an ansi-term shell"
+  (if (get-buffer "*reply*")
+      (switch-to-buffer "*reply*")
+    (ansi-term "reply" "reply")))
