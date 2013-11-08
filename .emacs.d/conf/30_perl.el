@@ -4,7 +4,6 @@
 (add-to-list 'auto-mode-alist '("\\.psgi\\'" . cperl-mode))
 
 (defun my-perl-common-mode ()
-  (set-perl5lib)
   (setq cperl-electric-lbrace-space nil)
   (setq cperl-electric-parens nil)
   (setq cperl-indent-parens-as-block t)
