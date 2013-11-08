@@ -5,6 +5,8 @@
 
 (defun my-perl-common-mode ()
   (set-perl5lib)
+  (setq cperl-electric-lbrace-space nil)
+  (setq cperl-electric-parens nil)
   (setq cperl-indent-parens-as-block t)
   (setq cperl-close-paren-offset -4)
   (setq cperl-indent-level 4)
@@ -13,3 +15,5 @@
   (setq cperl-highlight-variables-indiscriminately t)
   (setq cperl-indent-subs-specially nil))
 (add-hook 'cperl-mode-hook 'my-perl-common-mode)
+
+(add-hook 'cperl-mode-hook 'autopair-mode)
