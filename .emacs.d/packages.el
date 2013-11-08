@@ -26,6 +26,9 @@
      ag
      wgrep-ag
      rust-mode
+     dash
+     s
+     projectile
     ))
 
 (let ((not-installed (loop for x in installing-package-list
