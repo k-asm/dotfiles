@@ -31,6 +31,7 @@
      s
      projectile
      autopair
+     flycheck
      web-mode
     ))
 
