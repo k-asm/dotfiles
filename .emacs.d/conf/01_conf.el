@@ -180,3 +180,6 @@
 ;; autopair
 (require 'autopair)
 (autopair-global-mode t)
+
+;; 終了する時に確認するようにする
+(setq confirm-kill-emacs 'yes-or-no-p)
