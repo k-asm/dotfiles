@@ -6,4 +6,6 @@
             (setq nxml-attribute-indent 4)              ; 属性のインデント幅
             (setq tab-width 4)
             (setq indent-tab-mode -1)
+            (local-unset-key (kbd "M-h"))
+            (local-set-key (kbd "M-h") 'backward-kill-word)
             ))
