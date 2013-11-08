@@ -26,6 +26,7 @@
      ag
      wgrep-ag
      rust-mode
+     diminish
      dash
      s
      projectile
