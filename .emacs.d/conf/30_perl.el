@@ -2,6 +2,7 @@
 (defalias 'perl-mode 'cperl-mode)
 (add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.psgi\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\cpanfile\\'" . cperl-mode))
 
 (defun my-perl-common-mode ()
   (setq cperl-electric-lbrace-space nil)
