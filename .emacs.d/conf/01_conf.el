@@ -173,3 +173,6 @@
 ;; スペルチェック
 (setq-default flyspell-mode t)
 (setq ispell-dictionary "american")
+
+;; Auto refresh buffers
+(global-auto-revert-mode 1)
