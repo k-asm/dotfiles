@@ -12,6 +12,7 @@
 (define-key global-map (kbd "C-c G") 'ag-project-regexp)
 (define-key global-map (kbd "M-h") 'backward-kill-word)
 (define-key global-map (kbd "C-c m") 'magit-status)
+(define-key global-map (kbd "C-x w") 'global-whitespace-mode)
 
 ;; command -> meta
 (setq ns-command-modifier 'meta)
