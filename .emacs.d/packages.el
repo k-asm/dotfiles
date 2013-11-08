@@ -29,6 +29,7 @@
      dash
      s
      projectile
+     autopair
      web-mode
     ))
 

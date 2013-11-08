@@ -53,7 +53,7 @@
 
 ;; electric-pair-mode
 (when (>= emacs-major-version 24)
-  (electric-pair-mode t))
+  (electric-pair-mode 0))
 
 ;; linum
 (when (> emacs-major-version 22)
@@ -176,3 +176,7 @@
 
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
+
+;; autopair
+(require 'autopair)
+(autopair-global-mode t)
