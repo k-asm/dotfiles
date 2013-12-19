@@ -1,5 +1,4 @@
 (require 'anything-config)
-(require 'anything-grep)
 
 (setq anything-input-idle-delay 0.1)
 
