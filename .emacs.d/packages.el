@@ -33,6 +33,7 @@
      autopair
      flycheck
      web-mode
+     enh-ruby-mode
     ))
 
 (let ((not-installed (loop for x in installing-package-list
