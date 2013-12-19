@@ -15,7 +15,7 @@ See URL `http://www.perl.org'."
   '( cpanfile
     ))
 
-(defun my/cperl-mode-hook()
+(defun my/flycheck-cperl-mode-hook()
   (let ((name (file-name-nondirectory buffer-file-name)))
     (if (and name (loop for x in flycheck-perl-exclude-list
                         when (string= name x)
@@ -27,4 +27,4 @@ See URL `http://www.perl.org'."
         (flycheck-mode 1)
         (setq flycheck-checker 'perl-libs)))))
 
-(add-hook 'cperl-mode-hook 'my/cperl-mode-hook)
+(add-hook 'cperl-mode-hook 'my/flycheck-cperl-mode-hook)
