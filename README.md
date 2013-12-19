@@ -1,8 +1,8 @@
-# dotfiles
+# for emacs
 
     M-x auto-install-batch anything-minimal
 
-# make
+# clang-complete
 
     https://github.com/Golevka/emacs-clang-complete-async
 
