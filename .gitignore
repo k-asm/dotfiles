@@ -6,6 +6,9 @@ clang-complete
 .emacs.d/auto-save-list/*
 .emacs.d/elpa/*
 .emacs.d/eshell/*
+.emacs.d/auto-java-complete/
 .emacs.d/history
 .emacs.d/url/*
 .emacs.d/var/*
+.emacs.d/projectile-bookmarks.eld
+.emacs.d/tramp
