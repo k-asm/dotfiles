@@ -13,3 +13,5 @@
   (local-set-key (kbd "C-c d") 'yari-anything))
 (add-hook 'enh-ruby-mode-hook 'enh-ruby-mode-setup)
 
+(setq inf-ruby-default-implementation "pry")
+(add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
