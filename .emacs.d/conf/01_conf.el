@@ -183,3 +183,7 @@
 
 ;; 終了する時に確認するようにする
 (setq confirm-kill-emacs 'yes-or-no-p)
+
+;; 矩形選択
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
