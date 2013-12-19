@@ -11,7 +11,6 @@
 (define-key global-map (kbd "C-z") 'anything-command-map)
 (define-key anything-command-map (kbd "r") 'anything-resume)
 (define-key anything-command-map (kbd "o") 'anything-occur)
-(define-key anything-command-map (kbd "g") 'anything-grep)
 
 (defun my-anything ()
   (interactive)
