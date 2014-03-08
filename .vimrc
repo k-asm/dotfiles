@@ -22,6 +22,7 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tomtom/tcomment_vim'
 
 filetype plugin indent on
 
