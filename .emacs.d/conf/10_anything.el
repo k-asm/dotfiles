@@ -1,4 +1,5 @@
 (require 'anything-config)
+(require 'anything-gtags)
 
 (setq anything-input-idle-delay 0.1)
 

@@ -1,6 +1,7 @@
 # for emacs
 
     M-x auto-install-batch anything-minimal
+    M-x auto-install-from-emacswiki anything-gtags
 
 # clang-complete
 
