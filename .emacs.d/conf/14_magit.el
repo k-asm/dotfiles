@@ -10,6 +10,6 @@
   (interactive)
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
-(defadvice git-commit-comment (after move-to-magit-buffer activate)
 (define-key magit-status-mode-map (kbd "q") 'my/magit-quit-session)
+(defadvice git-commit-commit (after move-to-magit-buffer activate)
   (delete-window))
