@@ -26,10 +26,12 @@ Bundle 'tpope/vim-fugitive'
 filetype plugin indent on
 
 " Bundle setting
-nnoremap <silent> <Space>bi :<C-u>BundleInstall<CR>
-nnoremap <silent> <Space>bc :<C-u>BundleClean<CR>
-nnoremap <silent> <Space>bs :<C-u>BundleSearch<CR>
-nnoremap <silent> <Space>bu :<C-u>BundleUpdate<CR>
+nnoremap [bundle] <Nop>
+nmap     <Space>b [bundle]
+nnoremap <silent> [bundle]i :<C-u>BundleInstall<CR>
+nnoremap <silent> [bundle]c :<C-u>BundleClean<CR>
+nnoremap <silent> [bundle]s :<C-u>BundleSearch<CR>
+nnoremap <silent> [bundle]u :<C-u>BundleUpdate<CR>
 
 set rtp+=~/.vim/plugin/
 
@@ -64,13 +66,16 @@ set wildmode=list:longest,list:full  " リスト表示, 最長マッチ
 " Unite.vim
 " --------------------
 let g:unite_enable_start_insert = 1
-nnoremap <silent> <Space>uf :<C-u>Unite -buffer-name=files file file/new<CR>
-nnoremap <silent> <Space>un :<C-u>Unite file/new<CR>
-nnoremap <silent> <Space>ud :<C-u>Unite directory_mru<CR>
-nnoremap <silent> <Space>ub :<C-u>Unite buffer<CR>
-nnoremap <silent> <Space>ua :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent> <Space>us :<C-u>Unite snippet<CR>
-nnoremap <silent> <Space>um :<C-u>Unite mapping<CR>
+
+nnoremap [unite] <Nop>
+nmap     <Space>u [unite]
+nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file file/new<CR>
+nnoremap <silent> [unite]n :<C-u>Unite file/new<CR>
+nnoremap <silent> [unite]d :<C-u>Unite directory_mru<CR>
+nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]a :<C-u>Unite -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]s :<C-u>Unite snippet<CR>
+nnoremap <silent> [unite]m :<C-u>Unite mapping<CR>
 
 " neocomplcache
 " --------------------
@@ -114,13 +119,15 @@ inoremap <expr><C-h>    neocomplcache#smart_close_popup()."\<C-h>"
 
 " Fugitive
 " --------------------
-nnoremap <Space>gd :<C-u>Gdiff<CR>
-nnoremap <Space>gs :<C-u>Gstatus<CR>
-nnoremap <Space>gl :<C-u>Glog<CR>
-nnoremap <Space>ga :<C-u>Gwrite<CR>
-nnoremap <Space>gc :<C-u>Gcommit<CR>
-nnoremap <Space>gC :<C-u>Git commit --amend<CR>
-nnoremap <Space>gb :<C-u>Gblame<CR>
+nnoremap [fugitive] <Nop>
+nmap     <Space>g [fugitive]
+nnoremap [fugitive]d :<C-u>Gdiff<CR>
+nnoremap [fugitive]s :<C-u>Gstatus<CR>
+nnoremap [fugitive]l :<C-u>Glog<CR>
+nnoremap [fugitive]a :<C-u>Gwrite<CR>
+nnoremap [fugitive]c :<C-u>Gcommit<CR>
+nnoremap [fugitive]C :<C-u>Git commit --amend<CR>
+nnoremap [fugitive]b :<C-u>Gblame<CR>
 
 " 検索
 " --------------------
