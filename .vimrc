@@ -49,6 +49,9 @@ set expandtab           " tab -> spaces
 filetype plugin indent on       " ファイルタイプに合わせたインデントを利用
 if has("autocmd")
   autocmd FileType perl setlocal ts=4 sts=4 sw=4
+  autocmd FileType cpp  setlocal ts=4 sts=4 sw=4
+  autocmd FileType c    setlocal ts=4 sts=4 sw=4
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 endif
 
 " 表示
