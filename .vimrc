@@ -174,3 +174,7 @@ inoremap <C-f> <Right>
 " ---------------------
 nnoremap <silent> <Space><Space> :<C-u>source ~/.vimrc<CR>
 nnoremap <Esc><Esc> :<C-u>set nohlsearch<CR>
+
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q  <Nop>
