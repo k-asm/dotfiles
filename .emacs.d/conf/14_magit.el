@@ -1,4 +1,3 @@
-;; from http://d.hatena.ne.jp/syohex/20130904/1378310201
 (require 'magit)
 
 ;; cf: https://github.com/magit/magit/issues/862
@@ -6,6 +5,7 @@
     (setq magit-emacsclient-executable
           "/usr/local/Cellar/emacs/24.3/bin/emacsclient"))
 
+;; from http://d.hatena.ne.jp/syohex/20130904/1378310201
 (defadvice magit-status (around magit-fullscreen activate)
   (window-configuration-to-register :magit-fullscreen)
   ad-do-it
