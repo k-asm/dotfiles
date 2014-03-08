@@ -124,8 +124,12 @@
                          lines-tail        ; 長すぎる行のうち
                                            ; whitespace-line-column以降のみを
                                            ; 対象とする。
+                         tab-mark          ; タブは下の設定を利用して可視化する。
                          space-before-tab  ; タブの前にあるスペースを対象とする。
                          space-after-tab)) ; タブの後にあるスペースを対象とする。
+
+(setq whitespace-display-mappings
+      '((tab-mark   ?\t   [?\xBB ?\t]))) ; タブの代わりにこれを表示
 
 ;;; デフォルトで視覚化を有効にする。
 (global-whitespace-mode 1)
