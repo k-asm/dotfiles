@@ -19,6 +19,7 @@
       (setq interprogram-paste-function 'copy-from-osx)))
 
 ;; clipboard setting
+;; apt install xsel
 (if run-x
     (progn
       (setq interprogram-paste-function

@@ -102,6 +102,7 @@
     backup-directory-alist))
 
 ;; gtags
+;; apt install global
 ;; from http://qiita.com/yewton@github/items/d9e686d2f2a092321e34
 (setq gtags-prefix-key "\C-c")
 (setq gtags-mode-hook
