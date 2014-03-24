@@ -11,3 +11,6 @@ do
         ln -Fis "$PWD/$dotfile" $HOME
     fi
 done
+
+cd $HOME
+git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
