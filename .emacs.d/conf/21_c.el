@@ -1,9 +1,6 @@
 (defun ac-cc-mode-setup ()
-  (require 'auto-complete-clang-async)
   (setq ac-auto-start t)
-  (setq ac-clang-complete-executable "~/.emacs.d/clang-complete")
-  (setq ac-sources (append '(ac-source-clang-async
-                             ac-source-gtags)
+  (setq ac-sources (append '(ac-source-gtags)
                            ac-sources))
   (ac-clang-launch-completion-process))
 
