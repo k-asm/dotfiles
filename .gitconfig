@@ -1,0 +1,15 @@
+[user]
+	name = Kosuke Asami
+	email = tfortress58@gmail.com
+[color]
+	ui = auto
+[alias]
+        st = status -sb
+        ci = commit
+        br = branch
+        co = checkout
+        df = diff
+        dc = diff --cached
+        lg = log -p
+        gr = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+        undo = reset --hard
