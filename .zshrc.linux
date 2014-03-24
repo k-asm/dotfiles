@@ -1,6 +1,0 @@
-export LESSOPEN="|/usr/share/source-highlight/src-hilite-lesspipe.sh %s | nkf -w"
-alias ls="ls --color=auto"
-if which trash > /dev/null; then
-    alias rm="trash"
-fi
-
