@@ -1,0 +1,7 @@
+alias rm="trash"
+
+alias gst="git st"
+alias gdf="git df"
+alias gdc="git dc"
+alias glg="git lg"
+alias ggr="git gr"
