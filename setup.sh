@@ -18,3 +18,7 @@ do
         ln -Fis "$PWD/$dotfile" $HOME
     fi
 done
+
+if [ ! -f "$HOME/.emacs.d/elisp/set-perl5lib.el" ]; then
+    wget https://gist.githubusercontent.com/syohex/1333926/raw/set-perl5lib.el -O $HOME/.emacs.d/elisp/set-perl5lib.el
+fi
