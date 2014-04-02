@@ -1,6 +1,6 @@
 ;; gtags
 ;; apt install global
-;; from http://qiita.com/yewton@github/items/d9e686d2f2a092321e34
+;; cf: http://qiita.com/yewton@github/items/d9e686d2f2a092321e34
 (setq gtags-prefix-key "\C-c")
 (setq gtags-mode-hook
       '(lambda ()
@@ -27,18 +27,18 @@
     ;; delegate to gtags-parse-file
     (gtags-parse-file)))
 
-(defun update-gtags (&optional prefix)
-  (interactive "P")
-  (let ((rootdir (gtags-get-rootpath))
-        (args (if prefix "-v" "-iv")))
+(defun update-gtags ()
+  (interactive)
+  (let ((rootdir (gtags-get-rootpath)))
     (when rootdir
-      (let* ((default-directory rootdir)
-             (buffer (get-buffer-create "*update GTAGS*")))
-        (save-excursion
-          (set-buffer buffer)
-          (erase-buffer)
-          (let ((result (process-file "gtags" nil buffer nil args)))
-            (if (= 0 result)
-                (message "GTAGS successfully updated.")
-              (message "update GTAGS error with exit status %d" result))))))))
+      (let ((default-directory rootdir)
+            (buffer (get-buffer-create "*gtags*")))
+        (set-process-sentinel
+         (start-file-process "gtags" buffer "gtags" "-iv")
+         (lambda (process event)
+           (cond
+            ((string-match-p "finished" event)
+             (message "GTAGS successfully updated."))
+            ((string-match-p "abnormally" event)
+             (message "update GTAGS error")))))))))
 (add-hook 'after-save-hook 'update-gtags)
