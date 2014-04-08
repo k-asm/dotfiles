@@ -15,7 +15,12 @@ for dotfile in .?*
 do
     if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.gitignore' ]
     then
+        if [ -d $dotfile ]; then
+            [ ! -d "$HOME/$dotfile" ] && mkdir -p "$HOME/$dotfile"
+            find "$PWD/$dotfile" -name "*" -type f -exec ln -Fis {} "$HOME/$dotfile" \;
+        else
         ln -Fis "$PWD/$dotfile" $HOME
+        fi
     fi
 done
 
