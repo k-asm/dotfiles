@@ -18,7 +18,7 @@ do
     then
         if [ -d $dotfile ]; then
             [ ! -d "$HOME/$dotfile" ] && mkdir -p "$HOME/$dotfile"
-            find "$PWD/$dotfile" -name "*" -type f -exec ln -Fis {} "$HOME/$dotfile" \;
+            find "$PWD/$dotfile" -maxdepth 1 -mindepth 1 -name "*" -exec ln -Fis {} "$HOME/$dotfile" \;
         else
         ln -Fis "$PWD/$dotfile" $HOME
         fi
