@@ -10,7 +10,8 @@ if [ ! -d "$HOME/.vim" ]; then
     git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
-cd $(readlink -f $(dirname $0))
+greadlink -f . > /dev/null 2>&1 && READLINK="greadlink" || READLINK="readlink"
+cd $($READLINK -f $(dirname $0))
 for dotfile in .?*
 do
     if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.gitignore' ]
