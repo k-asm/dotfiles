@@ -10,6 +10,6 @@ export PATH="$HOME/local/android-studio/sdk/platform-tools:$PATH"
 export ANDROID_HOME="$HOME/local/android-studio/sdk/"
 export PERL_RL="Perl5"
 
-eval "$(rbenv init -)"
-eval "$(plenv init -)"
-eval "$(pyenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which plenv > /dev/null; then eval "$(plenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
