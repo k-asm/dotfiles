@@ -25,7 +25,8 @@
 (delete-selection-mode t)
 
 ;; スクロールバー必要なし
-(toggle-scroll-bar nil)
+(if run-x
+    (toggle-scroll-bar nil))
 ;; ツールバー必要なし
 (tool-bar-mode 0)
 ;; メニューバー必要なし
@@ -75,8 +76,10 @@
 (global-set-key "\M-[1;2D" 'windmove-left)
 
 ;; mouse-wheel ON
-(mouse-wheel-mode t)
-(setq mouse-wheel-follow-mouse t)
+(if run-x
+    (progn
+      (mouse-wheel-mode t)
+      (setq mouse-wheel-follow-mouse t)))
 
 ;; hiline
 (global-hl-line-mode)
