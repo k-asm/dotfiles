@@ -8,6 +8,7 @@ export PATH="$HOME/local/android-studio/sdk/tools:$PATH"
 export PATH="$HOME/local/android-studio/sdk/platform-tools:$PATH"
 
 export ANDROID_HOME="$HOME/local/android-studio/sdk/"
+export PERL_RL="Perl5"
 
 eval "$(rbenv init -)"
 eval "$(plenv init -)"
