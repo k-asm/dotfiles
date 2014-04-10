@@ -1,5 +1,8 @@
 #!/bin/sh
 
+greadlink -f . > /dev/null 2>&1 && READLINK="greadlink" || READLINK="readlink"
+basedir=$($READLINK -f $(dirname $0))
+
 if [ ! -d "$HOME/.zsh.d" ]; then
     cd $HOME
     git clone https://github.com/clear-code/zsh.d.git ~/.zsh.d
@@ -10,8 +13,7 @@ if [ ! -d "$HOME/.vim" ]; then
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 fi
 
-greadlink -f . > /dev/null 2>&1 && READLINK="greadlink" || READLINK="readlink"
-cd $($READLINK -f $(dirname $0))
+cd $basedir
 for dotfile in .?*
 do
     if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.gitignore' ]
