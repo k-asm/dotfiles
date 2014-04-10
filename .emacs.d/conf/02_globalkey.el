@@ -14,5 +14,7 @@
 (define-key global-map (kbd "C-c m") 'magit-status)
 (define-key global-map (kbd "C-x w") 'global-whitespace-mode)
 
+(keyboard-translate ?\C-h ?\C-?)
+
 ;; command -> meta
 (setq ns-command-modifier 'meta)
