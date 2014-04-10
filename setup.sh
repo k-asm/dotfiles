@@ -7,7 +7,7 @@ fi
 
 if [ ! -d "$HOME/.vim" ]; then
     cd $HOME
-    git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 fi
 
 greadlink -f . > /dev/null 2>&1 && READLINK="greadlink" || READLINK="readlink"
