@@ -23,6 +23,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on
 
@@ -132,6 +133,15 @@ nnoremap [fugitive]a :<C-u>Gwrite<CR>
 nnoremap [fugitive]c :<C-u>Gcommit<CR>
 nnoremap [fugitive]C :<C-u>Git commit --amend<CR>
 nnoremap [fugitive]b :<C-u>Gblame<CR>
+
+" NERDTree
+" --------------------
+nnoremap [nerdtree] <Nop>
+nmap     <Space>n [nerdtree]
+nnoremap [nerdtree]t :<C-u>NERDTreeToggle<CR>
+
+let g:NERDTreeShowHidden=1 " 隠しファイルを表示する
+let g:NERDTreeDirArrows=0  " +| を使ってツリー表示する
 
 " 検索
 " --------------------
