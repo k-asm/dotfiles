@@ -173,6 +173,21 @@ inoremap <C-p> <Up>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
+" タブ関係
+" ---------------------
+nnoremap [tab] <Nop>
+nmap     <Space>t [tab]
+nnoremap <silent> [tab]c :<c-u>tabnew<cr>
+nnoremap <silent> [tab]f :<c-u>tabfirst<cr>
+nnoremap <silent> [tab]l :<c-u>tablast<cr>
+nnoremap <silent> [tab]n :<c-u>tabnext<cr>
+nnoremap <silent> [tab]N :<c-u>tabNext<cr>
+nnoremap <silent> [tab]p :<c-u>tabprevious<cr>
+nnoremap <silent> [tab]e :<c-u>tabedit<cr>
+nnoremap <silent> [tab]x :<c-u>tabclose<cr>
+nnoremap <silent> [tab]o :<c-u>tabonly<cr>
+nnoremap <silent> [tab]s :<c-u>tabs<cr>
+
 " Keymap
 " ---------------------
 nnoremap <silent> <Space><Space> :<C-u>source ~/.vimrc<CR>
