@@ -1,3 +1,5 @@
+[core]
+        excludesfile = ~/.gitignore
 [user]
 	name = Kosuke Asami
 	email = tfortress58@gmail.com
