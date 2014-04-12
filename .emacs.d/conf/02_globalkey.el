@@ -14,6 +14,7 @@
 (define-key global-map (kbd "C-c m") 'magit-status)
 (define-key global-map (kbd "C-x w") 'global-whitespace-mode)
 
+;; for minibuffer
 (keyboard-translate ?\C-h ?\C-?)
 
 ;; command -> meta
