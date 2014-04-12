@@ -20,7 +20,7 @@
 
 ;; clipboard setting
 ;; apt install xsel
-(if run-x
+(if run-linux
     (progn
       (setq interprogram-paste-function
             (lambda ()
