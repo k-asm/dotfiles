@@ -14,4 +14,4 @@
         dc = diff --cached
         lg = log -p
         gr = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-        undo = reset --hard
+        undo = reset --hard ORIG_HEAD
