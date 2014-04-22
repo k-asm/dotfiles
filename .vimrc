@@ -6,6 +6,9 @@ set showcmd             " 入力したコマンドを表示
 set scrolloff=5         " カーソルの上下に表示される行数の最小値
 set vb t_vb=            " ビープを鳴らさない
 
+" バックスペースで行頭の空白・改行・insert 開始時より手前の文字を削除させる
+set backspace=indent,eol,start
+
 " Bundles
 " ---------------------
 filetype off
