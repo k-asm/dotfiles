@@ -27,6 +27,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'surround.vim'
 
 filetype plugin indent on
 
