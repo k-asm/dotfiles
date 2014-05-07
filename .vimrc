@@ -121,6 +121,12 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
+" Define delimiter
+if !exists('g:neocomplcache_delimiter_patterns')
+    let g:neocomplcache_delimiter_patterns = {}
+endif
+let g:neocomplcache_delimiter_patterns['perl'] = []
+
 " Plugin key-mapping
 inoremap <expr><C-g>    neocomplcache#undo_completion()
 inoremap <expr><C-l>    neocomplcache#complete_common_string()
