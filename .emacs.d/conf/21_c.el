@@ -1,11 +1,3 @@
-(defun ac-cc-mode-setup ()
-  (setq ac-auto-start t)
-  (setq ac-sources (append '(ac-source-gtags)
-                           ac-sources)))
-
-(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
-(add-hook 'c++-mode-common-hook 'ac-cc-mode-setup)
-
 ;; google-c-style
 (require 'google-c-style)
 (setq auto-mode-alist

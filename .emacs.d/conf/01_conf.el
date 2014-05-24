@@ -88,16 +88,6 @@
 (require 'saveplace)
 (setq-default save-place t)
 
-;; auto-complete
-;; (package-install 'auto-complete)
-(require 'auto-complete)
-(global-auto-complete-mode t)
-(require 'auto-complete-config)
-(ac-config-default)
-(define-key ac-complete-mode-map "\C-n" 'ac-next)
-(define-key ac-complete-mode-map "\C-p" 'ac-previous)
-(add-hook 'auto-complete-mode-hook 'ac-common-setup)
-
 ;; backup
 (setq make-backup-files t)
 (setq backup-directory-alist
