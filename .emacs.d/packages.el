@@ -35,6 +35,7 @@
      web-mode
      enh-ruby-mode
      exec-path-from-shell
+     yasnippet
     ))
 
 (let ((not-installed (loop for x in installing-package-list
