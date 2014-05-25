@@ -19,3 +19,9 @@
 (add-hook 'cperl-mode-hook 'my-perl-common-mode)
 
 (add-hook 'cperl-mode-hook 'autopair-mode)
+
+(defun perltidy-region ()
+  "Run perltidy on the current region"
+  (interactive)
+  (save-excursion
+    (shell-command-on-region (point) (mark) "perltidy -q" nil t)))

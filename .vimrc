@@ -212,6 +212,7 @@ nnoremap <silent> [tab]s :<c-u>tabs<cr>
 " ---------------------
 nnoremap <silent> <Space><Space> :<C-u>source ~/.vimrc<CR>
 nnoremap <Esc><Esc> :<C-u>set nohlsearch<CR>
+nnoremap ,pt :%! perltidy -q<CR>
 
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
