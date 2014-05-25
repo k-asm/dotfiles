@@ -218,6 +218,15 @@ nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q  <Nop>
 
+" ColorColumn
+" ---------------------
+" set textwidth=0
+" if exists('&colorcolumn')
+"     set colorcolumn=+1
+"     autocmd FileType perl,cpp,c,ruby,sh setlocal textwidth=80
+" endif
+set colorcolumn=80
+
 " Highlights
 " ---------------------
 augroup HighlightTrailingSpaces
