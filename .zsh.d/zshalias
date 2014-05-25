@@ -10,3 +10,5 @@ alias gdf="git df"
 alias gdc="git dc"
 alias glg="git lg"
 alias ggr="git gr"
+
+alias pd="perldoc -MPod::Perldoc::Cache -w parser=Pod::Text::Color::Delight"
