@@ -19,16 +19,16 @@
       (setq interprogram-paste-function 'copy-from-osx)))
 
 ;; clipboard setting
-;; apt install xclip
+;; apt install xsel
 (if run-linux
     (progn
       (setq interprogram-paste-function
             (lambda ()
-              (shell-command-to-string "xclip -o")))
+              (shell-command-to-string "xsel -o -b")))
       (setq interprogram-cut-function
             (lambda (text &optional rest)
               (let* ((process-connection-type nil)
-                     (proc (start-process "xsel" "*Messages*" "xclip" "-i")))
+                     (proc (start-process "xsel" "*Messages*" "xsel" "-i" "-b")))
                 (process-send-string proc text)
                 (process-send-eof proc))))))
 
