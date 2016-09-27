@@ -1,25 +1,25 @@
 (require 'cl)
 
 (defvar installing-package-list
-  '( init-loader
-     auto-complete
-     markdown-mode
-     ruby-block
-     ruby-end
-     google-c-style
-     cperl-mode
-     popwin
-     diminish
+  '( auto-complete
      autopair
-     flycheck
-     web-mode
-     enh-ruby-mode
+     diminish
      exec-path-from-shell
+     flycheck
      helm
      helm-ag
      helm-gtags
+     init-loader
      neotree
+     popwin
      redo+
+     cperl-mode
+     enh-ruby-mode
+     markdown-mode
+     web-mode
+     google-c-style
+     ruby-block
+     ruby-end
     ))
 
 (let ((not-installed (loop for x in installing-package-list
