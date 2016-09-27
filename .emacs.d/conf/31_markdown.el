@@ -1,2 +1,3 @@
-(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+(require 'markdown-mode)
 
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))

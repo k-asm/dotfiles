@@ -1,9 +1,6 @@
-;; cf: http://d.hatena.ne.jp/sun-basix/20080117/1200528765
-(require 'set-perl5lib)
-
 (defalias 'perl-mode 'cperl-mode)
-(add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
-(add-to-list 'auto-mode-alist '("\\.psgi\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.t\\'"      . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.psgi\\'"   . cperl-mode))
 (add-to-list 'auto-mode-alist '("\cpanfile\\'" . cperl-mode))
 
 (defun my-perl-common-mode ()
@@ -17,11 +14,3 @@
   (setq cperl-highlight-variables-indiscriminately t)
   (setq cperl-indent-subs-specially nil))
 (add-hook 'cperl-mode-hook 'my-perl-common-mode)
-
-(add-hook 'cperl-mode-hook 'autopair-mode)
-
-(defun perltidy-region ()
-  "Run perltidy on the current region"
-  (interactive)
-  (save-excursion
-    (shell-command-on-region (point) (mark) "perltidy -q" nil t)))
