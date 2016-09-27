@@ -18,6 +18,7 @@
      helm
      helm-ag
      helm-gtags
+     neotree
     ))
 
 (let ((not-installed (loop for x in installing-package-list
