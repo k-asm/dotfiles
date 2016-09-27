@@ -1,0 +1,18 @@
+fontsize = 16
+line_space = 3
+
+input_method = fcitx
+mod_meta_mode = esc
+
+scrollbar_mode = none
+fg_color = white
+bg_color = black
+
+use_bidi = false
+col_size_of_width_a = 1
+use_anti_alias = true
+receive_string_via_ucs = true
+only_use_unicode_font = true
+
+logging_msg = false
+use_clipboard = true
