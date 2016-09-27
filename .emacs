@@ -1,18 +1,9 @@
-(add-to-list 'load-path "~/.emacs.d/auto-install")
-(add-to-list 'load-path "~/.emacs.d/elisp")
-
 ;; package.el
 (require 'package)
 (add-to-list 'package-archives '("melpa"     . "http://melpa.milkbox.net/packages/")  t)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 (load "~/.emacs.d/packages")
-
-;; http://www.emacswiki.org/emacs/auto-install.el
-(require 'auto-install)
-(setq auto-install-directory "~/.emacs.d/auto-install")
-(auto-install-update-emacswiki-package-name t)
-(auto-install-compatibility-setup)
 
 ;; http://coderepos.org/share/browser/lang/elisp/init-loader/init-loader.el
 (require 'init-loader)
