@@ -1,5 +1,6 @@
 (require 'diminish)
+
 (diminish 'auto-complete-mode)
-(diminish 'projectile-mode)
 (diminish 'autopair-mode)
 (diminish 'global-whitespace-mode)
+(diminish 'helm-mode)
