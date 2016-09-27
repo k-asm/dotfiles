@@ -4,7 +4,8 @@
 (define-key global-map (kbd "C-e") 'end-of-line)
 (define-key global-map (kbd "M-g") 'goto-line)
 
-(define-key global-map (kbd "C-c r") 'replace-string)
+(define-key global-map (kbd "C-c r") 'replace-regexp)
+(define-key global-map (kbd "C-c q") 'query-replace-regexp)
 (define-key global-map (kbd "C-c i") 'indent-region)
 
 (define-key global-map (kbd "C-h") 'delete-backward-char)
