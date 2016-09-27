@@ -42,9 +42,6 @@
 ;; シンボリックリンクを開く時の質問を省略する
 (setq vc-follow-symlinks t)
 
-;; 関数名を表示する
-(which-function-mode t)
-
 ;; tab->space
 (setq-default indent-tabs-mode nil)
 
@@ -52,15 +49,9 @@
 (setq truncate-lines nil)
 (setq truncate-partial-width-windows nil)
 
-;; electric-pair-mode
-(when (>= emacs-major-version 24)
-  (electric-pair-mode 0))
-
 ;; linum
-(when (> emacs-major-version 22)
- (progn
-   (require 'linum)
-   (global-linum-mode t)))
+(require 'linum)
+(global-linum-mode t)
 
 ;; gdb
 (setq gdb-many-windows t)
@@ -75,12 +66,6 @@
 (global-set-key "\M-[1;2C" 'windmove-right)
 (global-set-key "\M-[1;2D" 'windmove-left)
 
-;; mouse-wheel ON
-(if run-x
-    (progn
-      (mouse-wheel-mode t)
-      (setq mouse-wheel-follow-mouse t)))
-
 ;; hiline
 (global-hl-line-mode)
 
@@ -93,6 +78,10 @@
 (setq backup-directory-alist
   (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/backup"))
     backup-directory-alist))
+(setq version-control     t)  ; 実行の有無
+(setq kept-new-versions   5)  ; 最新の保持数
+(setq kept-old-versions   1)  ; 最古の保持数
+(setq delete-old-versions t)  ; 範囲外を削除
 
 ;; uniquify
 (require 'uniquify)
@@ -101,17 +90,11 @@
 ;; whitespace
 ;;; 空白や長すぎる行を視覚化する。
 (require 'whitespace)
-;;; 1行が80桁を超えたら長すぎると判断する。
-(setq whitespace-line-column 80)
 (setq whitespace-style '(face              ; faceを使って視覚化する。
                          trailing          ; 行末の空白を対象とする。
-                         lines-tail        ; 長すぎる行のうち
-                                           ; whitespace-line-column以降のみを
-                                           ; 対象とする。
                          tab-mark          ; タブは下の設定を利用して可視化する。
                          space-before-tab  ; タブの前にあるスペースを対象とする。
                          space-after-tab)) ; タブの後にあるスペースを対象とする。
-
 (setq whitespace-display-mappings
       '((tab-mark   ?\t   [?\xBB ?\t]))) ; タブの代わりにこれを表示
 
@@ -122,11 +105,6 @@
 ;;; 補完時に大文字小文字を区別しない
 (setq completion-ignore-case t)
 (setq read-file-name-completion-ignore-case t)
-
-;;; 部分一致の補完機能を使う
-;;; p-bでprint-bufferとか
-(when (<= emacs-major-version 23)
-  (partial-completion-mode t))
 
 ;;; 補完可能なものを随時表示
 ;;; 少しうるさい
@@ -142,30 +120,11 @@
 ;;; 最近開いたファイルを保存する数を増やす
 (setq recentf-max-saved-items 10000)
 
-;; 圧縮
-;;; gzファイルも編集できるようにする
-(auto-compression-mode t)
-
-;; diff
-;;; ediffを1ウィンドウで実行
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-
-;;; diffのオプション
-(setq diff-switches '("-u" "-p" "-N"))
-
-;; 実行権
-;;; ファイルの先頭に#!...があるファイルを保存すると実行権をつける
-(add-hook 'after-save-hook
-          'executable-make-buffer-file-executable-if-script-p)
-
-;; スペルチェック
-(setq-default flyspell-mode t)
-(setq ispell-dictionary "american")
-
 ;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
 ;; autopair
+(electric-pair-mode 0)
 (require 'autopair)
 (autopair-global-mode t)
 
@@ -175,4 +134,7 @@
 ;; 矩形選択
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
-(define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
+
+;; load environment value
+(let ((envs '("PATH")))
+  (exec-path-from-shell-copy-envs envs))

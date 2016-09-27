@@ -2,40 +2,22 @@
 
 (defvar installing-package-list
   '( init-loader
-     auto-install
-     plenv
      auto-complete
-     haml-mode
-     sass-mode
-     js2-mode
      markdown-mode
-     inf-ruby
      ruby-block
      ruby-end
      google-c-style
-     auto-complete-clang-async
-     flymake
-     yari
-     gist
      cperl-mode
-     lua-mode
-     magit
-     color-theme-solarized
-     yaml-mode
      popwin
-     ag
-     wgrep-ag
-     rust-mode
      diminish
-     dash
-     s
-     projectile
      autopair
      flycheck
      web-mode
      enh-ruby-mode
      exec-path-from-shell
-     yasnippet
+     helm
+     helm-ag
+     helm-gtags
     ))
 
 (let ((not-installed (loop for x in installing-package-list
@@ -45,4 +27,3 @@
     (package-refresh-contents)
     (dolist (pkg not-installed)
       (package-install pkg))))
-
