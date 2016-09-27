@@ -10,12 +10,10 @@
 
 ;; c-mode-hook
 (defun my-c-common-mode ()
-  (c-toggle-hungry-state 1)
-  (gtags-mode 1))
+  (c-toggle-hungry-state 1))
 (add-hook 'c-mode-hook 'my-c-common-mode)
 
 ;; c++-mode-hook
 (defun my-c++-common-mode ()
-  (c-toggle-hungry-state 1)
-  (gtags-mode 1))
+  (c-toggle-hungry-state 1))
 (add-hook 'c++-mode-hook 'my-c++-common-mode)

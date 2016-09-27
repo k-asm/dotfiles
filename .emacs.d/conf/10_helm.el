@@ -13,10 +13,10 @@
 ;; key bindings
 (add-hook 'helm-gtags-mode-hook
           '(lambda ()
-              (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
-              (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
-              (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
+              (local-set-key (kbd "C-c t") 'helm-gtags-find-tag)
+              (local-set-key (kbd "C-c R") 'helm-gtags-find-rtag)
+              (local-set-key (kbd "C-c t") 'helm-gtags-find-symbol)
               (local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
 
 (setq helm-ag-base-command "ag --nocolor --nogroup --hidden")
-(global-set-key (kbd "C-c g") 'helm-ag)
+(define-key global-map (kbd "C-c g") 'helm-ag)
