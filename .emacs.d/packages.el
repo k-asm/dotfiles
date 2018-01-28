@@ -14,8 +14,10 @@
      popwin
      cperl-mode
      enh-ruby-mode
+     go-mode
      markdown-mode
      web-mode
+     go-autocomplete
      google-c-style
      ruby-block
      ruby-end
