@@ -12,7 +12,6 @@
      init-loader
      neotree
      popwin
-     redo+
      cperl-mode
      enh-ruby-mode
      markdown-mode
