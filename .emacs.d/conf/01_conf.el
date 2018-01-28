@@ -45,6 +45,9 @@
 ;; tab->space
 (setq-default indent-tabs-mode nil)
 
+;; set tab-width
+(setq-default default-tab-width 4)
+
 ;; right-side > return
 (setq truncate-lines nil)
 (setq truncate-partial-width-windows nil)
