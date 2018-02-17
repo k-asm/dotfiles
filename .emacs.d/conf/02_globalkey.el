@@ -9,7 +9,6 @@
 (define-key global-map (kbd "C-c i") 'indent-region)
 
 (define-key global-map (kbd "C-h") 'delete-backward-char)
-(define-key global-map (kbd "M-h") 'backward-kill-word)
 
 (define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
 

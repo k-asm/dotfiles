@@ -21,6 +21,10 @@
      google-c-style
      ruby-block
      ruby-end
+     dired-subtree
+     dired-toggle
+     iflipb
+     super-save
     ))
 
 (let ((not-installed (loop for x in installing-package-list

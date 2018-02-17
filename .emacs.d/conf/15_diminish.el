@@ -4,3 +4,4 @@
 (diminish 'autopair-mode)
 (diminish 'global-whitespace-mode)
 (diminish 'helm-mode)
+(diminish 'super-save-mode)
