@@ -24,10 +24,13 @@ Bundle 'unite.vim'
 Bundle 'itchyny/lightline.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Shougo/neocomplcache'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tomtom/tcomment_vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'surround.vim'
+Bundle 'simeji/winresizer'
+Bundle 'chr4/nginx.vim'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'open-browser.vim'
+Bundle 'previm/previm'
 
 filetype plugin indent on
 
@@ -63,7 +66,6 @@ endif
 " --------------------
 set number              " 行番号を表示
 set showmatch           " 括弧の対応をハイライト
-set cursorline          " カーソル行のハイライト
 
 " コマンド補完
 " --------------------
@@ -92,6 +94,8 @@ nnoremap <silent> [unite]m :<C-u>Unite mapping<CR>
 " Disable AutoComplPop
 let g:acp_enableAtStartup = 0
 
+let g:neocomplcache_enable_camel_case_completion = 0
+
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
 
@@ -102,13 +106,8 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-" アンダーバー区切りの補完を有効化
-let g:neocomplcache_enable_underbar_completion = 2
-
 " ポップアップに表示される候補の数
 let g:neocomplcache_max_list = 20
-
-let g:neocomplcache_skip_auto_completion_time = '0.3'
 
 " Define dictionary
 let g:neocomplcache_dictionary_filetype_lists = {
@@ -121,28 +120,10 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-" Define delimiter
-if !exists('g:neocomplcache_delimiter_patterns')
-    let g:neocomplcache_delimiter_patterns = {}
-endif
-let g:neocomplcache_delimiter_patterns['perl'] = []
-
 " Plugin key-mapping
 inoremap <expr><C-g>    neocomplcache#undo_completion()
 inoremap <expr><C-l>    neocomplcache#complete_common_string()
 inoremap <expr><C-h>    neocomplcache#smart_close_popup()."\<C-h>"
-
-" Fugitive
-" --------------------
-nnoremap [fugitive] <Nop>
-nmap     <Space>g [fugitive]
-nnoremap [fugitive]d :<C-u>Gdiff<CR>
-nnoremap [fugitive]s :<C-u>Gstatus<CR>
-nnoremap [fugitive]l :<C-u>Glog<CR>
-nnoremap [fugitive]a :<C-u>Gwrite<CR>
-nnoremap [fugitive]c :<C-u>Gcommit<CR>
-nnoremap [fugitive]C :<C-u>Git commit --amend<CR>
-nnoremap [fugitive]b :<C-u>Gblame<CR>
 
 " NERDTree
 " --------------------
@@ -151,7 +132,8 @@ nmap     <Space>n [nerdtree]
 nnoremap [nerdtree]t :<C-u>NERDTreeToggle<CR>
 
 let g:NERDTreeShowHidden=1 " 隠しファイルを表示する
-let g:NERDTreeDirArrows=0  " +| を使ってツリー表示する
+let g:NERDTreeDirArrowExpandable  = '+' " ツリー表示
+let g:NERDTreeDirArrowCollapsible = '-' " ツリー表示
 
 " 検索
 " --------------------
@@ -168,12 +150,6 @@ syntax on
 set background=dark
 let g:solarized_termcolors=256  " 256色モード
 colorscheme solarized
-
-" エンコーディング
-" --------------------
-set ffs=unix,dos,mac    " 改行文字
-set encoding=utf-8      " デフォルトエンコーディング
-set fileencoding=utf-8
 
 " バックアップ
 " --------------------
@@ -214,8 +190,6 @@ nnoremap <silent> <Space><Space> :<C-u>source ~/.vimrc<CR>
 nnoremap <Esc><Esc> :<C-u>set nohlsearch<CR>
 nnoremap ,pt :%! perltidy -q<CR>
 
-nnoremap ZZ <Nop>
-nnoremap ZQ <Nop>
 nnoremap Q  <Nop>
 
 " ColorColumn
@@ -237,6 +211,11 @@ augroup END
 
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
+" Markdown
+" ---------------------
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_emphasis_multiline = 0
 
 " Align
 " from: http://vim.wikia.com/wiki/Regex-based_text_alignment
