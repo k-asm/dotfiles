@@ -8,11 +8,6 @@ if [ ! -d "$HOME/.zsh.d" ]; then
     git clone https://github.com/clear-code/zsh.d.git ~/.zsh.d
 fi
 
-if [ ! -d "$HOME/.vim" ]; then
-    cd $HOME
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
-fi
-
 cd $basedir
 for dotfile in .?*
 do
@@ -26,3 +21,6 @@ do
         fi
     fi
 done
+
+[ ! -d "$HOME/.config/nvim" ] && mkdir -p "$HOME/.config/nvim"
+ln -Fis "$PWD/nvim.vim" ~/.config/nvim/init.vim
