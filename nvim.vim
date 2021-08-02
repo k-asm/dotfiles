@@ -21,6 +21,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/neomru.vim')
   call dein#add('scrooloose/nerdtree')
   call dein#add('itchyny/lightline.vim')
+  call dein#add('HerringtonDarkholme/yats.vim')
+  call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
+  call dein#add('posva/vim-vue')
 
   " Required:
   call dein#end()
@@ -53,6 +56,7 @@ if has("autocmd")
   autocmd FileType cpp  setlocal ts=4 sts=4 sw=4
   autocmd FileType c    setlocal ts=4 sts=4 sw=4
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2
 endif
 
 " 表示
@@ -71,6 +75,21 @@ nnoremap [denite] <Nop>
 nmap     <Space>u [denite]
 nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
 nnoremap <silent> [denite]a :<C-u>Denite -buffer-name=files buffer file_mru file<CR>
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
 call denite#custom#map(
   \ 'insert',
   \ '<C-N>',
