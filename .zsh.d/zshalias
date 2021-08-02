@@ -15,3 +15,8 @@ alias gpl="git pl"
 
 alias pd="perldoc -MPod::Perldoc::Cache -w parser=Pod::Text::Color::Delight"
 alias ll="la"
+
+alias vi="nvim"
+alias vim="nvim"
+
+alias ssh="TERM=xterm ssh"

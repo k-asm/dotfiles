@@ -1,11 +1,14 @@
 source ~/.zsh.d/zshrc
-[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
-eval "$(direnv hook zsh)"
+
+if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
 
 case "${OSTYPE}" in
     darwin*)
         fpath=(/usr/local/share/zsh-completions $fpath)
         [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+        ;;
+    linux*)
+        [ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
         ;;
 esac
 
