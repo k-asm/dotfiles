@@ -1,8 +1,8 @@
 [core]
         excludesfile = ~/.gitignore
 [user]
-	name = Kosuke Asami
-	email = tfortress58@gmail.com
+        name = k-asm
+        email = asami.kosuke@gmail.com
 [color]
         ui = true
 [alias]
@@ -19,9 +19,3 @@
         pl = !git pull origin `git rev-parse --abbrev-ref HEAD`
 [push]
         default = simple
-[sendemail]
-        from = Kosuke Asami <tfortress58@gmail.com>
-        smtpencryption = tls
-        smtpserver = smtp.gmail.com
-        smtpuser = tfortress58@gmail.com
-        smtpserverport = 587
