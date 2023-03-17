@@ -14,7 +14,7 @@ do
             [ ! -d "$HOME/$dotfile" ] && mkdir -p "$HOME/$dotfile"
             find "$PWD/$dotfile" -maxdepth 1 -mindepth 1 -name "*" -exec ln -Fis {} "$HOME/$dotfile" \;
         else
-        ln -Fis "$PWD/$dotfile" $HOME
+            ln -Fis "$PWD/$dotfile" $HOME
         fi
     fi
 done
