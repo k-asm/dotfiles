@@ -1,14 +1,11 @@
-#!/bin/sh
-
-greadlink -f . > /dev/null 2>&1 && READLINK="greadlink" || READLINK="readlink"
-basedir=$($READLINK -f $(dirname $0))
+#!/bin/bash
 
 if [ ! -d "$HOME/.zsh.d" ]; then
     cd $HOME
     git clone https://github.com/clear-code/zsh.d.git ~/.zsh.d
 fi
 
-cd $basedir
+cd $PWD
 for dotfile in .?*
 do
     if [ $dotfile != '..' ] && [ $dotfile != '.git' ] && [ $dotfile != '.gitignore' ]
