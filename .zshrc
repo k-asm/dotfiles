@@ -6,7 +6,8 @@ case "${OSTYPE}" in
     darwin*)
         fpath=(/usr/local/share/zsh-completions $fpath)
         [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-        [[ -s $(brew --prefix asdf)/asdf.sh ]] && . $(brew --prefix asdf)/asdf.sh
+        unset ASDF_DIR
+        [[ -s $(brew --prefix asdf)/libexec/asdf.sh ]] && . $(brew --prefix asdf)/libexec/asdf.sh
         ;;
     linux*)
         [ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
