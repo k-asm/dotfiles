@@ -21,9 +21,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/neomru.vim')
   call dein#add('scrooloose/nerdtree')
   call dein#add('itchyny/lightline.vim')
-  call dein#add('HerringtonDarkholme/yats.vim')
-  call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
-  call dein#add('posva/vim-vue')
 
   " Required:
   call dein#end()
