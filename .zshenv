@@ -8,6 +8,7 @@ case "${OSTYPE}" in
     darwin*)
         export PATH="`brew --prefix`/opt/python/libexec/bin:$PATH"
         export PATH="`brew --prefix`/opt/curl/bin:$PATH"
+        export BYOBU_PREFIX=/opt/homebrew
         ;;
 esac
 
